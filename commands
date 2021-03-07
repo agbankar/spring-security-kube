@@ -49,7 +49,7 @@ kubectl apply -f https://raw.githubusercontent.com/cor...
 
 
 
- docker rm $(docker stop test)
+docker rm $(docker stop test)
 
 kubectl get deployments
 
@@ -62,5 +62,9 @@ docker run -d --name tomcat tomcat:1.0
 
 kubectl exec --stdin --tty  provisioning-d-646494bb9f-s5dbf -- /bin/bash
 
- kubectl logs --namespace=kube-system -l k8s-app=kube-dns
+kubectl logs --namespace=kube-system -l k8s-app=kube-dns
+
+
+
+kubectl taint nodes ${kubectl get nodes}
 
